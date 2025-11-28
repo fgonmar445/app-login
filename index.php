@@ -40,7 +40,7 @@ session_start(); //Pendiente de seguridad
                                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                                 <p class="text-white-50 mb-5">Please enter your login and password!</p>
 
-                                <form action="autenticacion.php" method="POST">
+                                <form action="autenticacion.php" method="post">
                                     <!-- Aqui se mostraran los errores desde dentro de la aplicacion -->
                                     <?php
                                     if (isset($_SESSION['error'])) {
@@ -51,6 +51,7 @@ session_start(); //Pendiente de seguridad
                                         unset($_SESSION['error']);      //Manera correcta
                                     }
                                     ?>
+                                    <!--                                    -->
                                     <div data-mdb-input-init class="form-outline form-white mb-4">
                                         <input type="text" id="user" name="user" class="form-control form-control-lg" required />
                                         <label class="form-label" for="user">User</label>

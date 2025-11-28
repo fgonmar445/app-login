@@ -47,7 +47,7 @@ session_start(); //Pendiente de seguridad
                                         echo '<div class="alert alert-danger mb-4" role="alert">';
                                         echo $_SESSION['error'];
                                         echo '</div>';
-                                        $_SESSION['error'] = "";        //Manera incorrecta de limpiar variable
+                                        $_SESSION['error'] = "";        //Manera incorrecta de limpiar variable, contenido vacio pero la variable sigue declarada
                                         unset($_SESSION['error']);      //Manera correcta
                                     }
                                     ?>

@@ -18,11 +18,22 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
     }
 
     //HAY QUE COMPROBAR SI HUBO INTENTO DE XSS Y CONTESTAR CON MENSAJE DE ERROR
-    
     $username = htmlspecialchars($_POST['user']);
     $password = htmlspecialchars($_POST['pass']);
 
     //QUERY
+    $querySQL = "SELECT * FROM usuarios WHERE iduser = '$username'";
+
+    $resultado = $my->query($querySQL);
+
+    if ($resultado->num_rows == 0) { //user inexistente
+        $_SESSION['error'] = "Usuario incorrecto";
+        header('Location:./index.php');
+    } else { //user encontrado
+        
+    }
+
+
     //REDIRECCIONAR SI PASS O USER ES INCORRECTO
     //SI TODO ES CORRECTO A INICIO.PHP
     echo $username . ": " . $password;

@@ -1,5 +1,6 @@
 <?php
-session_start(); //seguridad
+include "establecer-sesion.php";
+
 
 if (isset($_POST['user']) && isset($_POST['pass'])) {
 

@@ -1,5 +1,5 @@
 <?php
-session_start(); //Pendiente de seguridad
+include "establecer-sesion.php";
 ?>
 
 <!DOCTYPE html>

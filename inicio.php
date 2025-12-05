@@ -1,6 +1,7 @@
 <?php
 
-session_start();
+include "establecer-sesion.php";
+
 
 ?>
 

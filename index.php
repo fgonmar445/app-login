@@ -37,7 +37,21 @@ include "establecer-sesion.php";
                                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                                 <p class="text-white-50 mb-5">Please enter your login and password!</p>
 
+
+                                <?php
+                                if (empty($_SESSION['csrf_token'])) {
+                                    // Creación de un CSRF Token
+                                    $csrf_token = bin2hex(openssl_random_pseudo_bytes(64));
+
+                                    // Resguardo del CSRF Token en una sesión
+                                    $_SESSION['csrf_token'] = $csrf_token;
+                                }
+                                ?>
+
                                 <form action="autenticacion.php" method="post">
+
+                                    <!-- Creacion del token csrf -->
+                                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
                                     <!-- Aqui se mostraran los errores desde dentro de la aplicacion -->
                                     <?php
                                     if (isset($_SESSION['error'])) {

@@ -1,8 +1,19 @@
 <?php
 include "establecer-sesion.php";
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Comprobar si el token CSRF enviado en el formulario coincide con el token almacenado en la sesión
+    if (isset($_POST['csrf_token']) && $_POST['csrf_token'] === $_SESSION['csrf_token']) {
+        // El token es válido, procesar el formulario
+        // Realizar la acción deseada 
+        echo "Formulario enviado correctamente."; // totalmente opcional, si acaso, en un alert
+    } else {
+        // El token no es válido, posible ataque CSRF
+        die("Solicitud no válida. Token CSRF no coincide."); // o mensaje en alert y redirección a index
+    }
+}
 
-if (isset($_POST['user']) && isset($_POST['pass'])) {
+if (isset($_POST['user']) && isset($_POST['pass'])) { //comprobacion insegura
 
     //Inicializacion de parametros de conexion
     $host = 'localhost';
@@ -40,7 +51,7 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
             //Cojo los datos del usuario y los envio como var sesion.
             $_SESSION['nombre'] = $row->nombre;
             $_SESSION['apellidos'] = $row->apellidos;
-            
+
             header("Location:./inicio.php"); //entra en la app
         } else {
             $_SESSION['error'] = "Contraseña incorrecta";

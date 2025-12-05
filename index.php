@@ -50,7 +50,7 @@ include "establecer-sesion.php";
 
                                 <form action="autenticacion.php" method="post">
 
-                                    <!-- Creacion del token csrf -->
+                                    <!-- Creacion del token csrf enviado en oculto -->
                                     <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
                                     <!-- Aqui se mostraran los errores desde dentro de la aplicacion -->
                                     <?php
@@ -58,7 +58,7 @@ include "establecer-sesion.php";
                                         echo '<div class="alert alert-danger mb-4" role="alert">';
                                         echo $_SESSION['error'];
                                         echo '</div>';
-                                        //$_SESSION['error'] = "";        Manera incorrecta de limpiar variable, contenido vacio pero la variable sigue declarada
+                                        //$_SESSION['error'] = "";       -- Manera incorrecta de limpiar variable, contenido vacio pero la variable sigue declarada --
                                         unset($_SESSION['error']);      //Manera correcta
                                     }
                                     ?>

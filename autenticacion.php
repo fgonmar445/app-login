@@ -50,7 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // Usuario inexistente
                     $_SESSION['error'] = "Usuario incorrecto";
                     header('Location: ./index.php');
-                    exit;
                 } else {
                     // Usuario encontrado
                     $row = $resultado->fetch_object();
@@ -63,11 +62,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $_SESSION['nombre'] = $row->nombre;
                         $_SESSION['apellidos'] = $row->apellidos;
                         header("Location: ./inicio.php");
-                        exit;
                     } else {
                         $_SESSION['error'] = "Contraseña incorrecta";
                         header("Location: ./index.php");
-                        exit;
                     }
                 }
             } else {
@@ -87,6 +84,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $_SESSION['error'] = "Debes hacer login para acceder, contenido sensible";
         header('Location: ./index.php');
-        exit;
     }
 }

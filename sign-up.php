@@ -24,14 +24,14 @@ include "establecer-sesion.php";
 </head>
 
 <body>
-    <section class="vh-100 bg-custom-gradient">
+    <section class="vh-200 bg-custom-gradient">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card bg-dark text-white" style="border-radius: 1rem;">
-                        <div class="card-body p-5 text-center">
+                        <div class="card-body p-5 pt-1 pb-1 text-center">
 
-                            <div class="mb-md-5 mt-md-4 pb-5">
+                            <div class="mb-md-5 mt-md-4 pb-1">
 
                                 <h2 class="fw-bold mb-2 text-uppercase">Sign Up</h2>
                                 <p class="text-white-50 mb-5">Create your account below</p>
@@ -57,39 +57,39 @@ include "establecer-sesion.php";
 
                                     <div class="form-outline form-white mb-4">
                                         <input type="text" id="user" name="user" class="form-control form-control-lg" required />
-                                        <label class="form-label" for="user">Username</label>
+                                        <label class="form-label mt-1" for="user">Username</label>
                                     </div>
 
                                     <div class="form-outline form-white mb-4">
                                         <input type="text" id="nombre" name="nombre" class="form-control form-control-lg" required />
-                                        <label class="form-label" for="nombre">First Name</label>
+                                        <label class="form-label mt-1" for="nombre">First Name</label>
                                     </div>
 
                                     <div class="form-outline form-white mb-4">
                                         <input type="text" id="apellidos" name="apellidos" class="form-control form-control-lg" required />
-                                        <label class="form-label" for="apellidos">Last Name</label>
+                                        <label class="form-label mt-1" for="apellidos">Last Name</label>
                                     </div>
 
                                     <div class="form-outline form-white mb-4">
                                         <input type="email" id="email" name="email" class="form-control form-control-lg" required />
-                                        <label class="form-label" for="email">Email</label>
+                                        <label class="form-label mt-1" for="email">Email</label>
                                     </div>
 
                                     <div class="form-outline form-white mb-4">
                                         <input type="password" id="pass" name="pass" class="form-control form-control-lg" required />
-                                        <label class="form-label" for="pass">Password</label>
+                                        <label class="form-label mt-1" for="pass">Password</label>
                                     </div>
 
                                     <button class="btn btn-outline-light btn-lg px-5" type="submit">Register</button>
                                 </form>
-
-                            </div>
-
-                            <div>
-                                <p class="mb-0">Already have an account?
-                                    <a href="login.php" class="text-white-50 fw-bold">Login</a>
+                                <div>
+                                <p class="mt-4">Already have an account?
+                                    <a href="index.php" class="text-white-50 fw-bold">Login</a>
                                 </p>
                             </div>
+                            </div>
+
+                            
 
                         </div>
                     </div>

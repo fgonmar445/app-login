@@ -54,8 +54,7 @@ include "establecer-sesion.php";
                                     <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
                                     <!-- Aqui se mostraran los errores desde dentro de la aplicacion -->
                                     <?php
-                                    if (isset($_SESSION['error']))
-                                        {
+                                    if (isset($_SESSION['error'])) {
                                         echo '<div class="alert alert-danger mb-4" role="alert">';
                                         echo $_SESSION['error'];
                                         echo '</div>';
@@ -102,7 +101,7 @@ include "establecer-sesion.php";
             </div>
         </div>
     </section>
-    <script src="validaciones.js"></script>
+    <script src="./verificaciones.js"></script>
 </body>
 
 </html>

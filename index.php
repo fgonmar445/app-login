@@ -48,7 +48,7 @@ include "establecer-sesion.php";
                                 }
                                 ?>
 
-                                <form action="autenticacion.php" method="post">
+                                <form id="form" action="autenticacion.php" method="post">
 
                                     <!-- Creacion del token csrf enviado en oculto -->
                                     <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
@@ -63,45 +63,40 @@ include "establecer-sesion.php";
                                     }
                                     ?>
                                     <!--                                    -->
-                                    <div data-mdb-input-init class="form-outline form-white mb-4">
-                                        <input type="text" id="user" name="user" class="form-control form-control-lg" required />
-                                        <label class="form-label" for="user">User</label>
+                                    <div data-mdb-input-init class="form-outline form-white mb-3">
+                                        <input type="text" id="user" name="user" class="form-control form-control-lg" oninput="limpiarError('user')" required />
+                                        <label class="form-label mt-2" for="user">User</label>
+                                        <div id="userHelp" class="form-text text-danger" style="visibility: hidden;">El usuario debe tener un tamaño entre ocho y quince letras</div>
+
                                     </div>
 
-                                    <div data-mdb-input-init class="form-outline form-white mb-4">
-                                        <input type="password" id="pass" name="pass" class="form-control form-control-lg" required />
-                                        <label class="form-label" for="pass">Password</label>
-                                    </div>
+                                    <div data-mdb-input-init class="form-outline form-white mb-0">
+                                        <input type="password" id="pass" name="pass" class="form-control form-control-lg" oninput="limpiarError('pass')" required />
+                                        <label class="form-label mt-2" for="pass">Password</label>
+                                        <div id="passHelp" class="form-text text-danger" style="visibility: hidden;">El contraseña debe tener un tamaño entre ocho y quince letras y contener mayus, minus y caracteres especiales excepto '' "" \ / <> = ( )</div>
 
-                                    <p class="small mb-5 pb-lg-2">
-                                        <a class="text-white-50" href="#!">Forgot password?</a>
-                                    </p>
+                                        <p class="small mt-1 mb-4 pb-lg-3">
+                                            <a class="text-white-50" href="#!">Forgot password?</a>
+                                        </p>
 
-                                    <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                                        <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
                                 </form>
-
-
-                                <div class="d-flex justify-content-center text-center mt-4 pt-1">
-                                    <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
-                                    <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-                                    <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
-                                </div>
-
                             </div>
-
-                            <div>
-                                <p class="mb-0">Don't have an account? <a href="./sign-up.php" class="text-white-50 fw-bold">Sign
-                                        Up</a>
-                                </p>
-                            </div>
-
+                        </div>
+                        <div>
+                            <p class="mb-0">Don't have an account? <a href="./sign-up.php" class="text-white-50 fw-bold">Sign
+                                    Up</a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
+        </div>
     </section>
     <script src="./verificaciones.js"></script>
+
 </body>
 
 </html>

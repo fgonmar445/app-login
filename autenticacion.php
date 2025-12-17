@@ -37,6 +37,11 @@ if (!isset($_SESSION['csrf_token'])) {
 if (!hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
     die("Solicitud no válida. Token CSRF incorrecto.");
 }
+/******************************************************
+ * SANITIZACIÓN CONTRA XSS
+ ******************************************************/
+$userInput = htmlspecialchars($_POST['user']);
+$passInput = º($_POST['pass']);
 
 if (empty($userInput) || empty($passInput)) {
     $_SESSION['login_attempts']++;
@@ -44,11 +49,6 @@ if (empty($userInput) || empty($passInput)) {
     header("Location: ./index.php");
     exit;
 }
-/******************************************************
- * SANITIZACIÓN CONTRA XSS
- ******************************************************/
-$userInput = htmlspecialchars($_POST['user']);
-$passInput = htmlspecialchars($_POST['pass']);
 
     // Aquí ya puedes continuar con el login, registro, borrado, etc.
 

@@ -41,7 +41,7 @@ if (!hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
  * SANITIZACIÓN CONTRA XSS
  ******************************************************/
 $userInput = htmlspecialchars($_POST['user']);
-$passInput = º($_POST['pass']);
+$passInput = htmlspecialchars($_POST['pass']);
 
 if (empty($userInput) || empty($passInput)) {
     $_SESSION['login_attempts']++;

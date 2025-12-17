@@ -1,4 +1,4 @@
-# 🛡️ Ejercicios de Implementación de Login con PHP + MariaDB
+# 🛡️ Ejercicios de Implementación de Login con PHP + MySQL
 
 Este repositorio contiene ejemplos prácticos de cómo implementar un sistema de **login seguro** utilizando **PHP** y **MariaDB**, aplicando diversas mejoras de seguridad tanto en el **frontend** como en el **backend**.
 

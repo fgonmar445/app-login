@@ -108,20 +108,20 @@ if (!$user) {
  * VALIDACIÓN DE CONTRASEÑA
  * Usa password_hash() y password_verify()
  ******************************************************/
-/* // CONTRASEÑAS CIFRADAS //
+ // CONTRASEÑAS CIFRADAS //
 if (!password_verify($passInput, $user['password'])) {
     $_SESSION['login_attempts']++;
     $_SESSION['error'] = "Contraseña incorrecta. Intento " . $_SESSION['login_attempts'] . " de $max_attempts.";
     header("Location: ./index.php");
     exit;
 }
-*/
+/*
 if ($passInput !== $user['password']) {
     $_SESSION['login_attempts']++;
     $_SESSION['error'] = "Contraseña incorrecta. Intento " . $_SESSION['login_attempts'] . " de $max_attempts.";
     header("Location: ./index.php");
     exit;
-}
+}*/
 
 /******************************************************
  *LOGIN CORRECTO

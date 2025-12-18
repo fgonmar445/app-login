@@ -59,9 +59,6 @@ Este repositorio contiene ejemplos prácticos de cómo implementar un sistema de
 
 ---
 
-
----
-
 ## 🧪 Pruebas realizadas
 - Validación de contraseñas en frontend.
 - Verificación de cookies seguras en navegador.
